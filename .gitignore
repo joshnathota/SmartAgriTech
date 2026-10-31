@@ -1,0 +1,28 @@
+# Java / Maven
+**/target/
+**/build/
+
+# Frontend
+**/node_modules/
+**/dist/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Credentials
+*.key
+*.pem
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+frontend/images/ai-assistant_files/

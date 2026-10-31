@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartAgriTech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+    <div class="logo">
+        <img src="./images/finallogo.png" alt="SmartAgriTech">
+        
+    </div>
+    <p>Smart farming, simple solutions</p>
+</header>
+
+    <main class="container">
+
+        <!-- Language Selection -->
+        <section id="languagePage">
+            <div class="welcome-icon">
+    <img src="./images/finallogo.png" alt="SmartAgriTech">
+</div>
+            <h1>Welcome, Farmer!</h1>
+            <p class="subtitle">Choose your language to continue</p>
+
+            <div class="language-grid">
+                <button class="language-card" data-lang="kn">
+                    <span class="language-native">ಕನ್ನಡ</span>
+                    <span class="language-english">Kannada</span>
+                </button>
+                <button class="language-card" data-lang="te">
+                    <span class="language-native">తెలుగు</span>
+                    <span class="language-english">Telugu</span>
+                </button>
+                <button class="language-card" data-lang="hi">
+                    <span class="language-native">हिन्दी</span>
+                    <span class="language-english">Hindi</span>
+                </button>
+                <button class="language-card" data-lang="ta">
+                    <span class="language-native">தமிழ்</span>
+                    <span class="language-english">Tamil</span>
+                </button>
+                <button class="language-card" data-lang="ml">
+                    <span class="language-native">മലയാളം</span>
+                    <span class="language-english">Malayalam</span>
+                </button>
+                <button class="language-card" data-lang="en">
+                    <span class="language-native">English</span>
+                    <span class="language-english">English</span>
+                </button>
+            </div>
+
+            <button id="continueBtn" disabled>Continue →</button>
+            <p id="message" aria-live="polite">Please select your language</p>
+        </section>
+
+        <!-- Account Page -->
+        <section id="accountPage" hidden>
+            <div class="welcome-icon">
+    <img src="./images/finallogo.png" alt="SmartAgriTech logo">
+</div>
+            <h1 id="accountHeading">Create your account</h1>
+            <p class="subtitle">Your farming assistant is here to help.</p>
+
+            <div class="account-card">
+                <div class="account-tabs">
+                    <button id="signupTab" class="active-tab">
+                        Create Account
+                    </button>
+                    <button id="loginTab">
+                        Login
+                    </button>
+                </div>
+
+                <form id="signupForm">
+                    <label for="farmerName">Full name</label>
+                    <input id="farmerName" type="text"
+                           placeholder="Enter your name" required>
+
+                    <label for="mobile">Mobile number</label>
+                    <input id="mobile" type="tel"
+                           placeholder="10-digit mobile number"
+                           pattern="[6-9][0-9]{9}"
+                           maxlength="10" required>
+
+                    <label for="village">Village</label>
+                    <input id="village" type="text"
+                           placeholder="Enter your village" required>
+
+                    <button class="main-button" type="submit">
+                        Create Account
+                    </button>
+                </form>
+
+                <form id="loginForm" hidden>
+                    <label for="loginMobile">Mobile number</label>
+                    <input id="loginMobile" type="tel"
+                           placeholder="Enter registered mobile number"
+                           pattern="[6-9][0-9]{9}"
+                           maxlength="10" required>
+
+                    <button class="main-button" type="submit">
+                        Continue to Login
+                    </button>
+                </form>
+
+                <p id="accountMessage" aria-live="polite"></p>
+            </div>
+
+            <button id="backBtn" class="back-button">
+                ← Back to language selection
+            </button>
+        </section>
+
+    </main>
+
+<!-- Farmer Dashboard -->
+<section id="dashboardPage" hidden>
+
+    <div class="dashboard-layout">
+
+        <!-- Left Sidebar -->
+        <aside class="dashboard-sidebar">
+
+            <div class="sidebar-brand">
+                <img src="./images/finallogo.png" alt="SmartAgriTech logo">
+            </div>
+
+            <p class="sidebar-label">MAIN MENU</p>
+
+            <button type="button" class="sidebar-link active"
+                    data-menu="dashboard">
+                🏠 <span>Dashboard</span>
+            </button>
+
+            <button type="button" class="sidebar-link"
+                    data-feature="assistant">
+                🎙️ <span>AI Assistant</span>
+            </button>
+
+            <button type="button" class="sidebar-link"
+                    data-feature="crops">
+                🌱 <span>Crop Recommendation</span>
+            </button>
+
+            <button type="button" class="sidebar-link"
+                    data-feature="disease">
+                🍃 <span>Disease Detection</span>
+            </button>
+
+            <button type="button" class="sidebar-link"
+                    data-feature="prices">
+                📈 <span>Market Prices</span>
+            </button>
+
+            <button type="button" class="sidebar-link"
+                    data-feature="schemes">
+                🏛️ <span>Government Schemes</span>
+            </button>
+
+            <button type="button" class="sidebar-link"
+                    data-feature="expert">
+                👨‍🌾 <span>Expert Help</span>
+            </button>
+
+            <div class="sidebar-bottom">
+                <button type="button" id="sidebarProfileBtn"
+                        class="sidebar-link">
+                    👤 <span>Farmer Profile</span>
+                </button>
+                <button id="logoutBtn" class="logout-button">Log Out</button>
+                <p>Made for farmers 💚</p>
+            </div>
+
+        </aside>
+
+        <!-- Main Dashboard Content -->
+        <div class="dashboard-main">
+
+            <div class="dashboard-topbar">
+                <div>
+                    <p class="dashboard-eyebrow">YOUR FARMING COMPANION</p>
+                    <h2>Smart farming, made simple</h2>
+                </div>
+
+                <button type="button" id="profileBtn"
+                        class="profile-button"
+                        aria-label="Farmer profile">
+                    👤
+                </button>
+            </div>
+
+            
+
+            <!-- Welcome -->
+            <div class="dashboard-welcome">
+                <div>
+                    <h1 id="dashboardTitle">Welcome, Farmer!</h1>
+                    <p id="dashboardSubtitle">
+                        Your farming assistant is ready.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Larger Voice Guidance -->
+            <div class="voice-guidance">
+
+                <div class="voice-guidance-icon">🔊</div>
+
+                <div class="voice-guidance-text">
+                    <h3 id="voiceHeading">Listen to instructions</h3>
+                    <p id="voiceMessage">
+                        Listen to the instructions to learn which feature to select.
+                    </p>
+                </div>
+
+                <div class="voice-guidance-actions">
+                    <button type="button" id="speakInstructionsBtn">
+                        🔊 Listen
+                    </button>
+
+                    <button type="button" id="stopSpeechBtn">
+                        ⏹ Stop
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="dashboard-section-heading">
+                <div>
+                    <h2 id="featuresTitle">What do you need today?</h2>
+                    <p>Choose a service to support your farm.</p>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+
+                <button type="button" class="feature-card"
+                        data-feature="assistant">
+                    <img src="images/ai-assistant.jpg"
+                         alt="Farmer using a phone in a field">
+                    <span class="feature-icon feature-icon-overlay">🎙️</span>
+                    <span class="feature-title" data-en="AI Assistant">
+                        AI Assistant
+                    </span>
+                    <span class="feature-description"
+                          data-en="Ask farming questions">
+                        Ask farming questions
+                    </span>
+                </button>
+
+                <button type="button" class="feature-card"
+                        data-feature="crops">
+                    <img src="images/Crop Recommendation.jpg"
+                         alt="Healthy crops growing in soil">
+                    <span class="feature-icon feature-icon-overlay">🌱</span>
+                    <span class="feature-title"
+                          data-en="Crop Recommendation">
+                        Crop Recommendation
+                    </span>
+                    <span class="feature-description"
+                          data-en="Find suitable crops">
+                        Find suitable crops
+                    </span>
+                </button>
+
+                <button type="button" class="feature-card"
+                        data-feature="disease">
+                    <img src="images/disease-detection.jpg"
+                         alt="Plant leaf showing disease symptoms">
+                    <span class="feature-icon feature-icon-overlay">🍃</span>
+                    <span class="feature-title" data-en="Disease Detection">
+                        Disease Detection
+                    </span>
+                    <span class="feature-description"
+                          data-en="Check crop health">
+                        Check crop health
+                    </span>
+                </button>
+
+                <button type="button" class="feature-card"
+                        data-feature="prices">
+                    <img src="images/market-prices.jpg"
+                         alt="Fresh vegetables and grains at a market">
+                    <span class="feature-icon feature-icon-overlay">📈</span>
+                    <span class="feature-title" data-en="Daily Market Price">
+                        Daily Market Price
+                    </span>
+                    <span class="feature-description"
+                          data-en="Check crop market rates">
+                        Check crop market rates
+                    </span>
+                </button>
+
+                <button type="button" class="feature-card"
+                        data-feature="schemes">
+                    <img src="images/government-schemes.jpg"
+                         alt="Farmer receiving agricultural support">
+                    <span class="feature-icon feature-icon-overlay">🏛️</span>
+                    <span class="feature-title" data-en="Government Schemes">
+                        Government Schemes
+                    </span>
+                    <span class="feature-description"
+                          data-en="Explore farmer benefits">
+                        Explore farmer benefits
+                    </span>
+                </button>
+
+                <button type="button" class="feature-card"
+                        data-feature="expert">
+                    <img src="images/expert-help.jpg"
+                         alt="Farmer talking to an agricultural expert">
+                    <span class="feature-icon feature-icon-overlay">👨‍🌾</span>
+                    <span class="feature-title" data-en="Expert Help">
+                        Expert Help
+                    </span>
+                    <span class="feature-description"
+                          data-en="Get farming guidance">
+                        Get farming guidance
+                    </span>
+                </button>
+
+            </div>
+
+            <div id="featureMessage" class="feature-message" hidden></div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section id="aiAssistantPanel" class="chat-page ai-full-page" hidden>
+<div class="ai-chat-layout">
+        <aside class="ai-chat-sidebar">
+            <div class="ai-sidebar-brand">
+                <img src="./images/finallogo.png" alt="SmartAgriTech logo" class="ai-logo">
+        
+            </div>
+
+            <button type="button" id="newAiChatButton" class="ai-sidebar-new">+ New Chat</button>
+            <button type="button" id="viewAiHistoryButton" class="ai-sidebar-history">📜 Chat History</button>
+
+            <div id="aiHistorySection" hidden>
+                <h3 id="historyHeading">Previous Conversations</h3>
+                <div id="aiHistoryList"></div>
+                <button type="button" id="closeAiHistoryButton">Close History</button>
+            </div>
+
+            <div class="ai-sidebar-bottom">
+                <span id="selectedLanguageLabel">🌐 English selected</span>
+            </div>
+        </aside>
+
+        <div class="chat-main">
+            <header class="chat-header">
+                <button type="button" id="closeAiAssistantButton" class="chat-icon-btn"
+                        title="Back to Dashboard" aria-label="Back to Dashboard">←</button>
+                <div class="chat-header-title">
+                </div>
+            </header>
+
+            <main id="aiChatMessages" class="chat-messages">
+                <div class="chat-welcome" id="chatWelcome">
+                    <img src="./images/finallogo.png" alt="SmartAgriTech logo" class="welcome-logo">
+                    <h2 id="chatWelcomeTitle">How can I help your farm today?</h2>
+                    <p id="chatWelcomeText">Ask about crops, plant diseases, weather, market prices, or government schemes in your selected language.</p>
+                </div>
+            </main>
+
+            <footer class="chat-composer-area">
+    <div class="chat-composer">
+        <textarea
+            id="farmerQuestion"
+            rows="1"
+            placeholder="Ask anything about farming..."
+            aria-label="Your farming question"
+        ></textarea>
+
+        <button type="button" id="voiceQuestionButton"
+                class="voice-chat-btn"
+                aria-label="Speak your question">🎤</button>
+
+        <button type="button" id="askAiButton"
+                class="send-chat-btn"
+                aria-label="Send question">↑</button>
+    </div>
+
+    <p id="chatFooterNote">
+        SmartAgri AI can make mistakes. Verify important farming advice.
+    </p>
+</footer>
+        </div>
+    </div>
+</section>
+
+<!-- End AI Assistant Panel -->
+    <button id="logoutBtn" class="logout-button">Log Out</button>
+<footer>Made for farmers ❤️</footer>
+    <script src="script.js"></script>
+</body>
+</html>
